@@ -8,14 +8,16 @@ Kelas : TI - 3F
 
 I.	Praktik Dengan Dart
 
-<img width="502" height="142" alt="Cuplikan layar 2025-09-03 135642" src="https://github.com/user-attachments/assets/c4deb6e4-dfbf-4f3d-9da8-f93cb5721b4a" />
+<img width="734" height="504" alt="image" src="https://github.com/user-attachments/assets/4e1b85f3-85fe-420e-accd-f339989be67d" />
+
 
 
 II.	Tugas Praktikum
 1.	Modifikasilah kode pada baris 3 di VS Code atau Editor Code favorit Anda berikut ini agar mendapatkan keluaran (output) sesuai yang diminta!
 	Jawab :
 	
-	<img width="477" height="247" alt="Cuplikan layar 2025-09-03 135748" src="https://github.com/user-attachments/assets/265d1b33-4fe0-44a2-a260-7977cc42c9d2" />
+	<img width="756" height="572" alt="image" src="https://github.com/user-attachments/assets/b180c7d4-5783-4b13-bc46-05e6f0857082" />
+
 
 3.	Mengapa sangat penting untuk memahami bahasa pemrograman Dart sebelum kita menggunakan framework Flutter ? Jelaskan!
 
@@ -80,17 +82,20 @@ II.	Tugas Praktikum
 	
 	Contoh yang salah (kode ada di folder src) :
 
-	<img width="908" height="80" alt="Cuplikan layar 2025-09-03 135829" src="https://github.com/user-attachments/assets/490d51a2-9bdb-46be-8f06-61e45ce86067" />
+	<img width="903" height="466" alt="image" src="https://github.com/user-attachments/assets/2a066583-66bc-4ab0-b92e-7dfa77e6e677" />
+
 
 	
 	Contoh yang benar (kode ada di folder src) :
 
-	<img width="488" height="72" alt="Cuplikan layar 2025-09-03 135918" src="https://github.com/user-attachments/assets/6388046f-114b-453d-a2dd-3d0b9e0e3e28" />
+	<img width="677" height="376" alt="image" src="https://github.com/user-attachments/assets/575a2910-1311-47a3-a34b-335269a320f7" />
+
 
 	 
 	Atau ditandai dengan ?. (kode ada di folder src)
 
-	<img width="712" height="116" alt="Cuplikan layar 2025-09-03 143912" src="https://github.com/user-attachments/assets/d378767a-661c-47c5-9755-6f0384117a06" />
+	<img width="652" height="452" alt="image" src="https://github.com/user-attachments/assets/59dc9d6f-4ad5-4019-9fa1-c07eeb4a7198" />
+
 
 	
 	b.	Late Variable
@@ -103,12 +108,14 @@ II.	Tugas Praktikum
 
 	Variable di inisialisasi setelah deklarasi dilakukan, tidak langsung saat deklarasi (kode ada folder src)
 
-	<img width="721" height="73" alt="Cuplikan layar 2025-09-03 144033" src="https://github.com/user-attachments/assets/1878306d-0b55-45c8-9666-ac4554457de7" />
+	<img width="689" height="437" alt="image" src="https://github.com/user-attachments/assets/10d2a149-3f79-4be7-8530-98ce216a6f31" />
+
 
 	
 	Atau bisa langsung dikasih nilai dengan menggunakan lazy initialization (kode ada di folder src)
 
-	<img width="721" height="96" alt="Cuplikan layar 2025-09-03 144143" src="https://github.com/user-attachments/assets/5b2cc4a7-aff7-4f0e-9b0c-4ad732465270" />
+	<img width="680" height="446" alt="image" src="https://github.com/user-attachments/assets/f05c6f5b-0c74-42e1-a8ab-5420ef190c37" />
+
 
 
 	Jadi perbedaan Null Safety dan Late variabel adalah: Null Safety (?) dipakai jika variabel boleh bernilai null, 
