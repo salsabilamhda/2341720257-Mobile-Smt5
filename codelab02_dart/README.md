@@ -1,9 +1,13 @@
 Tugas Praktikum 
+
 NIM : 2341720257
-Nama : Salsabila Mahda Runisha 
+
+Nama : Salsabila Mahda Runisha
+
 Kelas : TI - 3F 
 
 I.	Praktik Dengan Dart
+
 <img width="502" height="142" alt="Cuplikan layar 2025-09-03 135642" src="https://github.com/user-attachments/assets/c4deb6e4-dfbf-4f3d-9da8-f93cb5721b4a" />
 
 II.	Tugas Praktikum
@@ -18,25 +22,25 @@ Karena bahasa Dart adalah inti dari framework Flutter. Kerangka kerja modern sep
 3.	Rangkumlah materi dari codelab ini menjadi poin-poin penting yang dapat Anda gunakan untuk membantu proses pengembangan aplikasi mobile menggunakan framework Flutter.
 Jawab :
 Rangkuman :
-1.	Dart penting untuk dipelajari sebelum menggukana Flutter karena bahasa Dart merupakan inti dari Flutter
-2.	Fitur – fitur Dart
+a.	Dart penting untuk dipelajari sebelum menggukana Flutter karena bahasa Dart merupakan inti dari Flutter
+b.	Fitur – fitur Dart
 •	Productive tooling: merupakan fitur kakas (tool) untuk menganalisis kode, plugin IDE, dan ekosistem paket yang besar.
 •	Garbage collection: untuk mengelola atau menangani dealokasi memori (terutama memori yang ditempati oleh objek yang tidak lagi digunakan).
 •	nType annotations (opsional): untuk keamanan dan konsistensi dalam mengontrol semua data dalam aplikasi.
 •	Statically typed: Meskipun type annotations bersifat opsional, Dart tetap aman karena menggunakan fitur type-safe dan type inference untuk menganalisis types saat runtime. Fitur ini penting untuk menemukan bug selama kompilasi kode.
 •	Portability: bahasa Dart tidak hanya untuk web (yang dapat diterjemahkan ke JavaScript) tetapi juga dapat dikompilasi secara native ke kode Advanced RISC Machines (ARM) dan x86.
-3.	Alasan Tim Flutter memilih bahasa Dart karena Dart adalah bahasa modern yang luar biasa, mendukung lintas platform, dan memiliki tujuan umum dengan terus meningkatkan fitur - fiturnya, membuatkan lebih kekinian dan fleksibel.
-4.	Mode Eksesui kode Dart
+c.	Alasan Tim Flutter memilih bahasa Dart karena Dart adalah bahasa modern yang luar biasa, mendukung lintas platform, dan memiliki tujuan umum dengan terus meningkatkan fitur - fiturnya, membuatkan lebih kekinian dan fleksibel.
+d.	Mode Eksesui kode Dart
 •	Kompilasi JIT adalah tempat kode sumber dikompilasi sesuai kebutuhan—Just in time.
 •	Kompilasi AOT adalah dimana Dart VM dan kode Anda dikompilasi sebelumnya, VM bekerja lebih seperti sistem runtime Dart, yang menyediakan garbage collector dan metode-metode native dari Dart software development kit (SDK) pada aplikasi. 
-5.	Struktur Bahasa Dart
+e.	Struktur Bahasa Dart
 •	Object orientation . 
 •	Dart operators
 •	Arithmetic operators
 •	Operator Increment
 •	Operator Equality dan Relational
 •	Operator Logical
-6.	Desain Flutter sangat dipengaruhi oleh bahasa Dart
+f.	Desain Flutter sangat dipengaruhi oleh bahasa Dart
 
 4.	Buatlah penjelasan dan contoh eksekusi kode tentang perbedaan Null Safety dan Late variabel !
 Jawab : 
