@@ -16,4 +16,4 @@ void main() {
   print(nama); // otomatis ada nilainya
 }
 
-String getNama() => "Salsa"; 
+String getNama() => "Salsa";

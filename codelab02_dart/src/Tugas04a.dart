@@ -1,5 +1,5 @@
 // Kode Salah
-/* void main() {
+/*void main() {
   String nama = null;  
   print(nama);
 
