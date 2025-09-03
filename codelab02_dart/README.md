@@ -13,101 +13,102 @@ I.	Praktik Dengan Dart
 
 II.	Tugas Praktikum
 1.	Modifikasilah kode pada baris 3 di VS Code atau Editor Code favorit Anda berikut ini agar mendapatkan keluaran (output) sesuai yang diminta!
-Jawab : 
+	Jawab :
+	
 	<img width="477" height="247" alt="Cuplikan layar 2025-09-03 135748" src="https://github.com/user-attachments/assets/265d1b33-4fe0-44a2-a260-7977cc42c9d2" />
 
-2.	Mengapa sangat penting untuk memahami bahasa pemrograman Dart sebelum kita menggunakan framework Flutter ? Jelaskan!
+3.	Mengapa sangat penting untuk memahami bahasa pemrograman Dart sebelum kita menggunakan framework Flutter ? Jelaskan!
 
-Jawab : 
-
-Karena bahasa Dart adalah inti dari framework Flutter. Kerangka kerja modern seperti Flutter membutuhkan bahasa modern tingkat tinggi agar bisa memberikan pengalaman terbaik kepada pengembang, serta memungkinkan untuk membuat aplikasi seluler yang luar biasa.. 
+	Jawab : 
+	
+	Karena bahasa Dart adalah inti dari framework Flutter. Kerangka kerja modern seperti Flutter membutuhkan bahasa modern tingkat tinggi agar bisa memberikan pengalaman terbaik kepada pengembang, serta memungkinkan untuk membuat aplikasi seluler yang luar biasa.. 
 
 3.	Rangkumlah materi dari codelab ini menjadi poin-poin penting yang dapat Anda gunakan untuk membantu proses pengembangan aplikasi mobile menggunakan framework Flutter.
    
-Jawab :
+	Jawab :
+	
+	Rangkuman :
+	
+	a.	Dart penting untuk dipelajari sebelum menggukana Flutter karena bahasa Dart merupakan inti dari Flutter
+	
+	b.	Fitur – fitur Dart
+	
+	•	Productive tooling: merupakan fitur kakas (tool) untuk menganalisis kode, plugin IDE, dan ekosistem paket yang besar.
+	
+	•	Garbage collection: untuk mengelola atau menangani dealokasi memori (terutama memori yang ditempati oleh objek yang tidak lagi digunakan).
+	
+	•	nType annotations (opsional): untuk keamanan dan konsistensi dalam mengontrol semua data dalam aplikasi.
+	
+	•	Statically typed: Meskipun type annotations bersifat opsional, Dart tetap aman karena menggunakan fitur type-safe dan type inference untuk menganalisis types saat runtime. Fitur ini penting untuk menemukan bug selama kompilasi kode.
 
-Rangkuman :
+	•	Portability: bahasa Dart tidak hanya untuk web (yang dapat diterjemahkan ke JavaScript) tetapi juga dapat dikompilasi secara native ke kode Advanced RISC Machines (ARM) dan x86.
+	
+	c.	Alasan Tim Flutter memilih bahasa Dart karena Dart adalah bahasa modern yang luar biasa, mendukung lintas platform, dan memiliki tujuan umum dengan terus meningkatkan fitur - fiturnya, membuatkan lebih kekinian dan fleksibel.
+	
+	d.	Mode Eksesui kode Dart
+	
+	•	Kompilasi JIT adalah tempat kode sumber dikompilasi sesuai kebutuhan—Just in time.
+	
+	•	Kompilasi AOT adalah dimana Dart VM dan kode Anda dikompilasi sebelumnya, VM bekerja lebih seperti sistem runtime Dart, yang menyediakan garbage collector dan metode-metode native dari Dart software development kit (SDK) pada aplikasi. 
+	
+	e.	Struktur Bahasa Dart
+	
+	•	Object orientation . 
+	
+	•	Dart operators
 
-a.	Dart penting untuk dipelajari sebelum menggukana Flutter karena bahasa Dart merupakan inti dari Flutter
-
-b.	Fitur – fitur Dart
-
-•	Productive tooling: merupakan fitur kakas (tool) untuk menganalisis kode, plugin IDE, dan ekosistem paket yang besar.
-
-•	Garbage collection: untuk mengelola atau menangani dealokasi memori (terutama memori yang ditempati oleh objek yang tidak lagi digunakan).
-
-•	nType annotations (opsional): untuk keamanan dan konsistensi dalam mengontrol semua data dalam aplikasi.
-
-•	Statically typed: Meskipun type annotations bersifat opsional, Dart tetap aman karena menggunakan fitur type-safe dan type inference untuk menganalisis types saat runtime. Fitur ini penting untuk menemukan bug selama kompilasi kode.
-
-•	Portability: bahasa Dart tidak hanya untuk web (yang dapat diterjemahkan ke JavaScript) tetapi juga dapat dikompilasi secara native ke kode Advanced RISC Machines (ARM) dan x86.
-
-c.	Alasan Tim Flutter memilih bahasa Dart karena Dart adalah bahasa modern yang luar biasa, mendukung lintas platform, dan memiliki tujuan umum dengan terus meningkatkan fitur - fiturnya, membuatkan lebih kekinian dan fleksibel.
-
-d.	Mode Eksesui kode Dart
-
-•	Kompilasi JIT adalah tempat kode sumber dikompilasi sesuai kebutuhan—Just in time.
-
-•	Kompilasi AOT adalah dimana Dart VM dan kode Anda dikompilasi sebelumnya, VM bekerja lebih seperti sistem runtime Dart, yang menyediakan garbage collector dan metode-metode native dari Dart software development kit (SDK) pada aplikasi. 
-
-e.	Struktur Bahasa Dart
-
-•	Object orientation . 
-
-•	Dart operators
-
-•	Arithmetic operators
-
-•	Operator Increment
-
-•	Operator Equality dan Relational
-
-•	Operator Logical
-
-f.	Desain Flutter sangat dipengaruhi oleh bahasa Dart
-
+	•	Arithmetic operators
+	
+	•	Operator Increment
+	
+	•	Operator Equality dan Relational
+	
+	•	Operator Logical
+	
+	f.	Desain Flutter sangat dipengaruhi oleh bahasa Dart
+	
 
 4.	Buatlah penjelasan dan contoh eksekusi kode tentang perbedaan Null Safety dan Late variabel !
    
-Jawab : 
+	Jawab : 
+	
+	a.	Null Safety
+	
+	•	Null Safety adalah fitur di Dart (sejak versi 2.12) untuk mencegah error yang disebabkan oleh nilai null.
+	
+	•	Secara default, variabel tidak boleh null, kecuali kita menandainya dengan ?.
+	
+	Contoh yang salah (kode ada di folder src) :
+	
+		<img width="908" height="80" alt="Cuplikan layar 2025-09-03 135829" src="https://github.com/user-attachments/assets/720b9b55-68e2-414f-87c7-7cb318bcc5cf" />
+	
+	Contoh yang benar (kode ada di folder src) :
 
-a.	Null Safety
+		<img width="488" height="72" alt="Cuplikan layar 2025-09-03 135918" src="https://github.com/user-attachments/assets/3433cd93-0163-407c-8201-1fb8be80e112" />
+	 
+	Atau ditandai dengan ?. (kode ada di folder src) 
+	
+		<img width="712" height="116" alt="Cuplikan layar 2025-09-03 143912" src="https://github.com/user-attachments/assets/6cd5c077-17a5-48df-80d2-4d1fb95393c7" />
+	
+	b.	Late Variable
+	
+	•	late digunakan jika kita menunda inisialisasi variabel, tapi tetap ingin memastikan bahwa variabel tersebut bukan null saat digunakan.
+	
+	•	Cocok untuk variabel yang nilai awalnya belum bisa ditentukan saat deklarasi, tapi pasti akan diisi sebelum dipakai.
+	
+	Contoh :
 
-•	Null Safety adalah fitur di Dart (sejak versi 2.12) untuk mencegah error yang disebabkan oleh nilai null.
+	Variable di inisialisasi setelah deklarasi dilakukan, tidak langsung saat deklarasi (kode ada folder src) 
+	
+		<img width="721" height="73" alt="Cuplikan layar 2025-09-03 144033" src="https://github.com/user-attachments/assets/3a355535-3e20-4db2-ad99-2067845aa6f7" />
+	
+	Atau bisa langsung dikasih nilai dengan menggunakan lazy initialization (kode ada di folder src)
+	
+		<img width="721" height="96" alt="Cuplikan layar 2025-09-03 144143" src="https://github.com/user-attachments/assets/fa03072c-4e46-41f1-b7b3-b9a8ada9f540" />
 
-•	Secara default, variabel tidak boleh null, kecuali kita menandainya dengan ?.
-
-Contoh yang salah (kode ada di folder src) :
-
-	<img width="908" height="80" alt="Cuplikan layar 2025-09-03 135829" src="https://github.com/user-attachments/assets/720b9b55-68e2-414f-87c7-7cb318bcc5cf" />
-
-Contoh yang benar (kode ada di folder src) :
-
-	<img width="488" height="72" alt="Cuplikan layar 2025-09-03 135918" src="https://github.com/user-attachments/assets/3433cd93-0163-407c-8201-1fb8be80e112" />
- 
-Atau ditandai dengan ?. (kode ada di folder src) 
-
-	<img width="712" height="116" alt="Cuplikan layar 2025-09-03 143912" src="https://github.com/user-attachments/assets/6cd5c077-17a5-48df-80d2-4d1fb95393c7" />
-
-b.	Late Variable
-
-•	late digunakan jika kita menunda inisialisasi variabel, tapi tetap ingin memastikan bahwa variabel tersebut bukan null saat digunakan.
-
-•	Cocok untuk variabel yang nilai awalnya belum bisa ditentukan saat deklarasi, tapi pasti akan diisi sebelum dipakai.
-
-Contoh :
-
-Variable di inisialisasi setelah deklarasi dilakukan, tidak langsung saat deklarasi (kode ada folder src) 
-
-	<img width="721" height="73" alt="Cuplikan layar 2025-09-03 144033" src="https://github.com/user-attachments/assets/3a355535-3e20-4db2-ad99-2067845aa6f7" />
-
-Atau bisa langsung dikasih nilai dengan menggunakan lazy initialization (kode ada di folder src)
-
-	<img width="721" height="96" alt="Cuplikan layar 2025-09-03 144143" src="https://github.com/user-attachments/assets/fa03072c-4e46-41f1-b7b3-b9a8ada9f540" />
-
-Jadi perbedaan Null Safety dan Late variabel adalah: Null Safety (?) dipakai jika variabel boleh bernilai null, 
-sedangkan Late (late) dipakai jika variabel tidak boleh null tetapi nilainya baru bisa diberikan setelah deklarasi.
-
-NB : Seluruh Kode ada di folder src
+	Jadi perbedaan Null Safety dan Late variabel adalah: Null Safety (?) dipakai jika variabel boleh bernilai null, 
+	sedangkan Late (late) dipakai jika variabel tidak boleh null tetapi nilainya baru bisa diberikan setelah deklarasi.
+	
+	NB : Seluruh Kode ada di folder src
 			
 			
