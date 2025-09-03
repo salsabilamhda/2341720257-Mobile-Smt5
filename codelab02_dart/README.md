@@ -79,15 +79,17 @@ II.	Tugas Praktikum
 	•	Secara default, variabel tidak boleh null, kecuali kita menandainya dengan ?.
 	
 	Contoh yang salah (kode ada di folder src) :
-		<img width="908" height="80" alt="Cuplikan layar 2025-09-03 135829" src="https://github.com/user-attachments/assets/490d51a2-9bdb-46be-8f06-61e45ce86067" />
+
+	<img width="908" height="80" alt="Cuplikan layar 2025-09-03 135829" src="https://github.com/user-attachments/assets/490d51a2-9bdb-46be-8f06-61e45ce86067" />
 
 	
 	Contoh yang benar (kode ada di folder src) :
-		<img width="488" height="72" alt="Cuplikan layar 2025-09-03 135918" src="https://github.com/user-attachments/assets/6388046f-114b-453d-a2dd-3d0b9e0e3e28" />
+	<img width="488" height="72" alt="Cuplikan layar 2025-09-03 135918" src="https://github.com/user-attachments/assets/6388046f-114b-453d-a2dd-3d0b9e0e3e28" />
 
 	 
-	Atau ditandai dengan ?. (kode ada di folder src) 
-		<img width="712" height="116" alt="Cuplikan layar 2025-09-03 143912" src="https://github.com/user-attachments/assets/d378767a-661c-47c5-9755-6f0384117a06" />
+	Atau ditandai dengan ?. (kode ada di folder src)
+
+	<img width="712" height="116" alt="Cuplikan layar 2025-09-03 143912" src="https://github.com/user-attachments/assets/d378767a-661c-47c5-9755-6f0384117a06" />
 
 	
 	b.	Late Variable
@@ -98,12 +100,14 @@ II.	Tugas Praktikum
 	
 	Contoh :
 
-	Variable di inisialisasi setelah deklarasi dilakukan, tidak langsung saat deklarasi (kode ada folder src) 
-		<img width="721" height="73" alt="Cuplikan layar 2025-09-03 144033" src="https://github.com/user-attachments/assets/1878306d-0b55-45c8-9666-ac4554457de7" />
+	Variable di inisialisasi setelah deklarasi dilakukan, tidak langsung saat deklarasi (kode ada folder src)
+
+	<img width="721" height="73" alt="Cuplikan layar 2025-09-03 144033" src="https://github.com/user-attachments/assets/1878306d-0b55-45c8-9666-ac4554457de7" />
 
 	
 	Atau bisa langsung dikasih nilai dengan menggunakan lazy initialization (kode ada di folder src)
-		<img width="721" height="96" alt="Cuplikan layar 2025-09-03 144143" src="https://github.com/user-attachments/assets/5b2cc4a7-aff7-4f0e-9b0c-4ad732465270" />
+
+	<img width="721" height="96" alt="Cuplikan layar 2025-09-03 144143" src="https://github.com/user-attachments/assets/5b2cc4a7-aff7-4f0e-9b0c-4ad732465270" />
 
 
 	Jadi perbedaan Null Safety dan Late variabel adalah: Null Safety (?) dipakai jika variabel boleh bernilai null, 
