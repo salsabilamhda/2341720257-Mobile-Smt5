@@ -54,12 +54,13 @@
 
 # B. PRAKTIKUM 2
 1. Langkah 1
+   
         while (counter < 33) {
         print(counter);
         counter++;
         }
 
-2. Langkah 2
+3. Langkah 2
    
      <img width="311" height="169" alt="img4" src="https://github.com/user-attachments/assets/90fb5118-929c-4050-9b19-013d52c63731" />
 
