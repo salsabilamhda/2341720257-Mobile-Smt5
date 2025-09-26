@@ -8,6 +8,11 @@ Hasil Akhir :
 
 Hasil Akhir : 
 
+<img width="720" height="1544" alt="image" src="https://github.com/user-attachments/assets/692cc5fc-f588-4f74-b7fd-08286b10c744" /> <img width="720" height="1544" alt="image" src="https://github.com/user-attachments/assets/5bd3e189-fbe7-4ca6-b361-6360531ab22a" /> <img width="720" height="1544" alt="image" src="https://github.com/user-attachments/assets/d8b34751-5fd7-4add-b778-17a5e5c4dc64" />
+
+
+
+
 # PRAKTIKUM 3
 
 Hasil Akhir :
