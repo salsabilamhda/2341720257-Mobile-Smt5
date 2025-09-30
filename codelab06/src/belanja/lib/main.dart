@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'models/item.dart';
 import 'pages/home_page.dart';
 import 'pages/item_page.dart';
 
@@ -11,13 +13,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    final GoRouter router = GoRouter(
+      routes: [
+        GoRoute(
+          path: '/',
+          builder: (context, state) => HomePage(),
+        ),
+        GoRoute(
+          path: '/item',
+          builder: (context, state) {
+            final item = state.extra as Item;
+            return ItemPage(item: item);
+          },
+        ),
+      ],
+    );
+
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomePage(),
-        '/item': (context) => const ItemPage(),
-      },
+      title: 'Marketplace Sederhana',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        useMaterial3: true,
+      ),
+      routerConfig: router,
     );
   }
 }
