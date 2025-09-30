@@ -10,17 +10,20 @@ class ItemPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(itemArgs.name)),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
-                itemArgs.photo,
-                width: double.infinity,
-                height: 200,
-                fit: BoxFit.cover,
+              child: Hero(
+                tag: itemArgs.photo,  // harus sama dengan tag di HomePage
+                child: Image.asset(
+                  itemArgs.photo,
+                  width: double.infinity,
+                  height: 200,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             const SizedBox(height: 16),
@@ -47,6 +50,7 @@ class ItemPage extends StatelessWidget {
                 ),
               ],
             ),
+            // Kamu bisa tambahkan detail lain di sini
           ],
         ),
       ),

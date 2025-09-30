@@ -65,15 +65,19 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Gambar dengan Hero
                     Expanded(
                       child: ClipRRect(
                         borderRadius: const BorderRadius.vertical(
                           top: Radius.circular(12),
                         ),
-                        child: Image.asset(
-                          item.photo,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
+                        child: Hero(
+                          tag: item.photo, // kita gunakan path sebagai tag unik
+                          child: Image.asset(
+                            item.photo,
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
