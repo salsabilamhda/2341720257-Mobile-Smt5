@@ -5,7 +5,7 @@ void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // ====== Langkah 1: method _buildButtonColumn ======
+  // ====== Method _buildButtonColumn ======
   Column _buildButtonColumn(Color color, IconData icon, String label) {
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    // ===== Langkah 2: buttonSection =====
+    // ===== buttonSection =====
     Color color = Theme.of(context).primaryColor;
 
     Widget buttonSection = Row(
@@ -75,6 +75,20 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    // ===== Langkah 1: textSection =====
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Carilah teks di internet yang sesuai '
+        'dengan foto atau tempat wisata yang ingin '
+        'Anda tampilkan. '
+        'Salsabila Mahda - 2341720257. '
+        'Mahasiswa '
+        'Selamat mengerjakan 🙂.',
+        softWrap: true,
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter layout: Salsabila Mahda - 2341720257',
       home: Scaffold(
@@ -83,10 +97,9 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            titleSection,           // section judul
-            buttonSection,          // ===== Langkah 3: tambahkan button section =====
-            const SizedBox(height: 20),
-            const Center(child: Text("")),
+            titleSection,
+            buttonSection,
+            textSection,            // ===== Langkah 2: tambahkan textSection =====
           ],
         ),
       ),
