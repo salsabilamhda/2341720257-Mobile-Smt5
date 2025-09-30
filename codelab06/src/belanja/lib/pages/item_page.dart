@@ -6,12 +6,11 @@ class ItemPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Item item = ModalRoute.of(context)!.settings.arguments as Item;
-
+    final itemArgs = ModalRoute.of(context)!.settings.arguments as Item;
     return Scaffold(
-      appBar: AppBar(title: Text('Shopping List')),
+      appBar: AppBar(title: Text(itemArgs.name)),
       body: Center(
-        child: Text('${item.name} with ${item.price}'),
+        child: Text('Harga: Rp ${itemArgs.price}'),
       ),
     );
   }
