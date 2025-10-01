@@ -33,8 +33,7 @@
 
 Hasil Akhir : 
 
-<img width="1917" height="996" alt="image" src="https://github.com/user-attachments/assets/699d0051-4ffd-4b4c-980b-fab244d5d4fe" />
-
+<img width="1919" height="1004" alt="image" src="https://github.com/user-attachments/assets/c94b4f02-2e80-497b-b338-68b5fa447fed" />
 
 # PRAKTIKUM 5
 
