@@ -18,10 +18,10 @@ class MyApp extends StatelessWidget {
             label,
             style: const TextStyle(
               fontSize: 12,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.bold,
               color: Colors.black54,
             ),
-            textAlign: TextAlign.center, // rata tengah label
+            textAlign: TextAlign.center,
           ),
         ),
         Text(
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
             fontSize: 14,
             fontWeight: FontWeight.bold,
           ),
-          textAlign: TextAlign.center, // rata tengah value
+          textAlign: TextAlign.center,
         )
       ],
     );
@@ -38,38 +38,63 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ===== titleSection =====
+    // ===== Stars Row =====
+    final stars = Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(Icons.star, color: Colors.green[500]),
+        Icon(Icons.star, color: Colors.green[500]),
+        Icon(Icons.star, color: Colors.green[500]),
+        const Icon(Icons.star, color: Colors.black),
+        const Icon(Icons.star, color: Colors.black),
+      ],
+    );
+
+    final ratings = Container(
+      padding: const EdgeInsets.all(20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          stars,
+          const Text(
+            '170 Reviews',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w800,
+              fontFamily: 'Roboto',
+              letterSpacing: 0.5,
+              fontSize: 20,
+            ),
+          ),
+        ],
+      ),
+    );
+
+    // ===== titleSection (LEFT COLUMN) =====
     Widget titleSection = Column(
-      crossAxisAlignment: CrossAxisAlignment.center, // isi Column rata tengah
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const Text(
           'Strawberry Pavlova',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          textAlign: TextAlign.center, // judul rata tengah
+          textAlign: TextAlign.center,
         ),
         const SizedBox(height: 8),
         const Text(
           'Pavlova is a meringue-based dessert named after the Russian '
           'ballerina Anna Pavlova. Pavlova features a crisp crust and soft, '
-          'light inside, topped with fruit and whipped cream.',
+          'light inside, topped with fruit and whipped cream.'
+          ' Salsabila Mahda Runisha - 2341720257',
           softWrap: true,
-          textAlign: TextAlign.center, // deskripsi rata tengah
+          textAlign: TextAlign.center,
         ),
         const SizedBox(height: 12),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center, // bintang+review di tengah
-          children: [
-            Row(
-              children: List.generate(
-                5,
-                (index) => const Icon(Icons.star, color: Colors.black),
-              ),
-            ),
-            const SizedBox(width: 8),
-            const Text('170 Reviews'),
-          ],
-        ),
+
+        ratings,
+
         const SizedBox(height: 16),
+
+        // ===== Row: PREP, COOK, FEEDS =====
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -95,10 +120,13 @@ class MyApp extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // LEFT COLUMN
                 Expanded(
                   flex: 2,
-                  child: titleSection, // tetap di kiri, tapi kontennya rata tengah
+                  child: titleSection,
                 ),
+
+                // IMAGE
                 Expanded(
                   flex: 3,
                   child: Image.asset(
