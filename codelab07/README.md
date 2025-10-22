@@ -1,6 +1,8 @@
 # Praktikum Menerapkan Plugin di Project Flutter
 
 ## Hasil Akhir :
+<img width="948" height="1126" alt="Cuplikan layar 2025-10-06 221201" src="https://github.com/user-attachments/assets/2e245e16-229e-4c65-9197-43bd1841afc1" />
+
 
 # TUGAS PRAKTIKUM
 
