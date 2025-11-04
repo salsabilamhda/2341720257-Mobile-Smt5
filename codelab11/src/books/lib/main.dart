@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:async/async.dart'; // ✅ Langkah 1: import async
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
@@ -33,14 +34,27 @@ class FuturePage extends StatefulWidget {
 class _FuturePageState extends State<FuturePage> {
   String result = '';
 
-  Future<Response> getData() async {
-    const authority = 'www.googleapis.com';
-    const path = '/books/v1/volumes/LkD48g32wDwC';
-    Uri url = Uri.https(authority, path);
-    return http.get(url);
+  // ====== Langkah 2: Tambahkan variabel late dan method untuk Completer ======
+  late Completer<int> completer;
+
+  Future<int> getNumber() {
+    completer = Completer<int>();
+    calculate();
+    return completer.future;
   }
 
-  // ====== Tambahkan tiga method Future ======
+  // ====== Langkah 5: Ganti isi method calculate() ======
+  Future<void> calculate() async {
+    try {
+      await Future.delayed(const Duration(seconds: 5)); // simulasi proses lama
+      completer.complete(42); // hasil sukses
+      // throw Exception(); // gunakan ini untuk mengetes error
+    } catch (_) {
+      completer.completeError({}); // jika error
+    }
+  }
+
+  // ====== Tambahkan tiga method Future (kode lama tetap ada, tapi tidak dipakai dulu) ======
   Future<int> returnOneAsync() async {
     await Future.delayed(const Duration(seconds: 3));
     return 1;
@@ -56,7 +70,6 @@ class _FuturePageState extends State<FuturePage> {
     return 3;
   }
 
-  // ====== Langkah 2: Tambahkan method count() ======
   Future<void> count() async {
     int total = 0;
     total = await returnOneAsync();
@@ -77,15 +90,23 @@ class _FuturePageState extends State<FuturePage> {
         child: Column(
           children: [
             const Spacer(),
-            // ====== Langkah 3: Panggil count() ======
             ElevatedButton(
               child: const Text('GO!'),
+              // ====== Langkah 6: Pindah ke onPressed() ======
               onPressed: () {
-                count(); // panggil fungsi count()
+                getNumber().then((value) {
+                  setState(() {
+                    result = value.toString();
+                  });
+                }).catchError((e) {
+                  setState(() {
+                    result = 'An error occurred';
+                  });
+                });
               },
             ),
             const Spacer(),
-            Text(result),
+            Text(result, style: const TextStyle(fontSize: 24)),
             const Spacer(),
             const CircularProgressIndicator(),
             const Spacer(),
