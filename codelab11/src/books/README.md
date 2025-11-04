@@ -132,6 +132,40 @@ Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerja
 
   https://github.com/user-attachments/assets/6e904ebe-0831-437d-b4e4-b61929729bcf
 
+## Soal 15
+
+- Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+
+  <img width="545" height="60" alt="image" src="https://github.com/user-attachments/assets/716f5301-8047-412e-ac49-5f15937d1530" />
+
+- Silakan ganti dengan warna tema favorit Anda.
+
+  <img width="573" height="62" alt="image" src="https://github.com/user-attachments/assets/d389b2d2-2ff3-419e-8da9-9f56092ee98c" />
+
+## Soal 16
+
+- Cobalah klik se tiap button, apa yang terjadi ? Mengapa demikian ?
+
+  Jawab :
+  
+  Ketika setiap tombol diklik, halaman kedua akan mengirimkan warna yang dipilih (misalnya merah, hijau, atau biru) kembali ke halaman pertama menggunakan Navigator.pop(). Halaman pertama kemudian menerima nilai warna tersebut melalui await Navigator.push() dan memperbarui tampilan latar belakangnya menggunakan setState(), sehingga warna background langsung berubah sesuai tombol yang ditekan. Hal ini terjadi karena mekanisme Navigator di Flutter memungkinkan pertukaran data antarhalaman secara reaktif tanpa perlu memuat ulang aplikasi.
+
+  https://github.com/user-attachments/assets/0147c5ae-621e-4397-8581-f0bab7542434
+
+- Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
+
+  <img width="506" height="616" alt="image" src="https://github.com/user-attachments/assets/f4687cd9-6000-4a53-98fa-7577bc09fcf2" />
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 16".
+
+  https://github.com/user-attachments/assets/e9806f4b-bad1-48a1-b14a-3f67e690605a
+
+## Soal 17
+
+
+  
+
+
 
 
 
