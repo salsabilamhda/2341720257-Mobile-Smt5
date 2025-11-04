@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:http/http.dart' as http;
+import 'package:geolocator/geolocator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,76 +12,128 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Future Demo',
+      title: 'Future Demo - by Salsabila',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const FuturePage(),
+      home: const LocationScreen(),
     );
   }
 }
 
-class FuturePage extends StatefulWidget {
-  const FuturePage({super.key});
+// ===============================================================
+// Screen untuk menampilkan lokasi pengguna (by Salsabila)
+// ===============================================================
+class LocationScreen extends StatefulWidget {
+  const LocationScreen({super.key});
 
   @override
-  State<FuturePage> createState() => _FuturePageState();
+  State<LocationScreen> createState() => _LocationScreenState();
 }
 
-class _FuturePageState extends State<FuturePage> {
+class _LocationScreenState extends State<LocationScreen> {
+  String myPosition = '';
   String result = '';
 
-  // ====== Future yang mensimulasikan error ======
-  Future returnError() async {
-    await Future.delayed(const Duration(seconds: 2));
-    throw Exception('Something terrible happened!');
-  }
-
-  // ====== Langkah 4: Tambah method handleError() ======
-  Future handleError() async {
-    try {
-      await returnError(); // menjalankan Future yang akan error
+  @override
+  void initState() {
+    super.initState();
+    getPosition().then((Position myPos) {
+      String positionText =
+          'Latitude: ${myPos.latitude.toString()} - Longitude: ${myPos.longitude.toString()}';
       setState(() {
-        result = 'Success'; // jika tidak error
+        myPosition = positionText;
       });
-    } catch (error) {
+    }).catchError((error) {
       setState(() {
-        result = error.toString(); // tampilkan pesan error
+        myPosition = 'Error: $error';
       });
-    } finally {
-      print('Complete'); // dijalankan selalu, apapun hasilnya
-    }
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    // ===== Tambahan widget loading sesuai gambar =====
+    final myWidget = myPosition == ''
+        ? const CircularProgressIndicator()
+        : Text(
+            myPosition,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 18),
+          );
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Back from the Future'),
+        title: const Text('Current Location - by Salsabila'),
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Spacer(),
+            myWidget, // tampilkan indikator loading atau lokasi
+            const SizedBox(height: 20),
             ElevatedButton(
-              child: const Text('GO!'),
-              // ====== Panggil method handleError() di onPressed() ======
-              onPressed: () {
-                handleError();
-              },
+              onPressed: () => handleError(),
+              child: const Text('Test Error - by Salsabila'),
             ),
-            const Spacer(),
+            const SizedBox(height: 20),
             Text(
               result,
-              style: const TextStyle(fontSize: 24),
+              style: const TextStyle(fontSize: 20, color: Colors.redAccent),
             ),
-            const Spacer(),
-            const CircularProgressIndicator(),
-            const Spacer(),
           ],
         ),
       ),
+    );
+  }
+
+  // ====== Future yang mensimulasikan error ======
+  Future returnError() async {
+    await Future.delayed(const Duration(seconds: 2));
+    throw Exception('Something terrible happened! - by Salsabila');
+  }
+
+  // ====== Method handleError() ======
+  Future handleError() async {
+    try {
+      await returnError();
+      setState(() {
+        result = 'Success';
+      });
+    } catch (error) {
+      setState(() {
+        result = error.toString();
+      });
+    } finally {
+      print('Complete - by Salsabila');
+    }
+  }
+
+  // ====== Ambil posisi GPS ======
+  Future<Position> getPosition() async {
+    LocationPermission permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        throw Exception('Location permission denied - by Salsabila');
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      throw Exception('Location permissions permanently denied - by Salsabila');
+    }
+
+    bool isServiceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!isServiceEnabled) {
+      throw Exception('Location services disabled - by Salsabila');
+    }
+
+    // 🔹 Tambahkan delay agar animasi loading terlihat
+    await Future.delayed(const Duration(seconds: 3));
+
+    return await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high,
     );
   }
 }
