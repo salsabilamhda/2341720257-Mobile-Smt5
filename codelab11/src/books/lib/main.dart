@@ -33,40 +33,26 @@ class FuturePage extends StatefulWidget {
 class _FuturePageState extends State<FuturePage> {
   String result = '';
 
-  // ====== Future async sederhana ======
-  Future<int> returnOneAsync() async {
-    await Future.delayed(const Duration(seconds: 3));
-    return 1;
+  // ====== Future yang mensimulasikan error ======
+  Future returnError() async {
+    await Future.delayed(const Duration(seconds: 2));
+    throw Exception('Something terrible happened!');
   }
 
-  Future<int> returnTwoAsync() async {
-    await Future.delayed(const Duration(seconds: 3));
-    return 2;
-  }
-
-  Future<int> returnThreeAsync() async {
-    await Future.delayed(const Duration(seconds: 3));
-    return 3;
-  }
-
-  // ====== Langkah 4: Ganti FutureGroup dengan Future.wait ======
-  void returnFG() async {
-    final futures = Future.wait<int>([
-      returnOneAsync(),
-      returnTwoAsync(),
-      returnThreeAsync(),
-    ]);
-
-    futures.then((List<int> value) {
-      int total = 0;
-      for (var element in value) {
-        total += element;
-      }
-
+  // ====== Langkah 4: Tambah method handleError() ======
+  Future handleError() async {
+    try {
+      await returnError(); // menjalankan Future yang akan error
       setState(() {
-        result = total.toString();
+        result = 'Success'; // jika tidak error
       });
-    });
+    } catch (error) {
+      setState(() {
+        result = error.toString(); // tampilkan pesan error
+      });
+    } finally {
+      print('Complete'); // dijalankan selalu, apapun hasilnya
+    }
   }
 
   @override
@@ -81,9 +67,9 @@ class _FuturePageState extends State<FuturePage> {
             const Spacer(),
             ElevatedButton(
               child: const Text('GO!'),
-              // ====== Langkah 2: Edit onPressed() ======
+              // ====== Panggil method handleError() di onPressed() ======
               onPressed: () {
-                returnFG(); // panggil method Future.wait
+                handleError();
               },
             ),
             const Spacer(),
