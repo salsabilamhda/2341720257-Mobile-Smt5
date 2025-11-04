@@ -106,6 +106,32 @@ Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerja
 
   https://github.com/user-attachments/assets/d1fb5df5-ee4b-402a-bbb7-131dc3b5187c
 
+## Soal 13
+
+- Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+
+  Jawab :
+  
+  Ya, terdapat perbedaan UI antara praktikum sebelumnya dan praktikum kali ini. Pada praktikum sebelumnya, data lokasi diperoleh menggunakan then() dan diperbarui secara manual melalui setState(), sedangkan pada praktikum ini digunakan FutureBuilder yang membuat tampilan lebih efisien, bersih, dan reaktif terhadap perubahan data. Dengan FutureBuilder, proses pemuatan data ditangani secara otomatis melalui status Future, sehingga UI dapat menampilkan indikator loading saat data belum tersedia dan hasil lokasi saat proses selesai. Pendekatan ini membuat kode lebih ringkas serta memisahkan logika asynchronous dari tampilan UI dengan lebih baik.
+  
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 13".
+
+  https://github.com/user-attachments/assets/6483f694-dcc1-4a7a-88d6-47a8a586da0c
+  
+- Seperti yang Anda lihat, menggunakan FutureBuilder lebih efisien, clean, dan reactive dengan Future bersama UI.
+
+## Soal 14
+
+- Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?
+
+  Jawab :
+
+  Tidak ada perbedaan UI yang terlihat secara langsung dibandingkan langkah sebelumnya selama tidak terjadi error pada proses pengambilan lokasi. Hal ini karena penambahan kode snapshot.hasError hanya berfungsi sebagai penanganan kondisi error. Jadi, jika aplikasi berjalan normal dan berhasil mendapatkan lokasi, tampilan yang ditampilkan tetap sama seperti sebelumnya — yaitu koordinat lokasi. Namun, jika terjadi kesalahan (misalnya izin lokasi ditolak atau GPS dimatikan), maka UI akan menampilkan pesan "Something terrible happened!", menandakan bahwa fitur error handling kini sudah bekerja dengan baik untuk memberi umpan balik kepada pengguna.
+  
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 14".
+
+  https://github.com/user-attachments/assets/6e904ebe-0831-437d-b4e4-b61929729bcf
+
 
 
 
