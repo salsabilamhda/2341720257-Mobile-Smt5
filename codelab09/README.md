@@ -11,14 +11,18 @@
 2. Gabungkan hasil praktikum 1 dengan hasil praktikum 2 sehingga setelah melakukan pengambilan foto, dapat dibuat filter carouselnya!
 
    Jawab :
+   
    <img width="720" height="1544" alt="image" src="https://github.com/user-attachments/assets/7b8fb194-f30e-4ccd-810f-df521695c87c" />
-3. Jelaskan maksud void async pada praktikum 1?
+
+   <img width="720" height="1544" alt="image" src="https://github.com/user-attachments/assets/245887ac-b1d0-4990-8de4-dc8a1a61fe5f" />
+
+4. Jelaskan maksud void async pada praktikum 1?
 
    Jawab :
    void async digunakan untuk membuat fungsi asynchronous yang dapat menjalankan proses dengan await.
-4. Jelaskan fungsi dari anotasi @immutable dan @override ?
+5. Jelaskan fungsi dari anotasi @immutable dan @override ?
    
    Jawab :
    @immutable menandakan class tidak dapat diubah setelah dibuat, dan @override digunakan untuk menimpa method dari class induk.
    
-5. Kumpulkan link commit repository GitHub Anda kepada dosen yang telah disepakati!
+6. Kumpulkan link commit repository GitHub Anda kepada dosen yang telah disepakati!
