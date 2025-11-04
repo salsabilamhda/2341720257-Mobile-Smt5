@@ -34,7 +34,6 @@ class LocationScreen extends StatefulWidget {
 
 class _LocationScreenState extends State<LocationScreen> {
   String myPosition = '';
-  String result = '';
 
   @override
   void initState() {
@@ -68,46 +67,9 @@ class _LocationScreenState extends State<LocationScreen> {
         title: const Text('Current Location - by Salsabila'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            myWidget, // tampilkan indikator loading atau lokasi
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () => handleError(),
-              child: const Text('Test Error - by Salsabila'),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              result,
-              style: const TextStyle(fontSize: 20, color: Colors.redAccent),
-            ),
-          ],
-        ),
+        child: myWidget, // tampilkan indikator loading atau lokasi
       ),
     );
-  }
-
-  // ====== Future yang mensimulasikan error ======
-  Future returnError() async {
-    await Future.delayed(const Duration(seconds: 2));
-    throw Exception('Something terrible happened! - by Salsabila');
-  }
-
-  // ====== Method handleError() ======
-  Future handleError() async {
-    try {
-      await returnError();
-      setState(() {
-        result = 'Success';
-      });
-    } catch (error) {
-      setState(() {
-        result = error.toString();
-      });
-    } finally {
-      print('Complete - by Salsabila');
-    }
   }
 
   // ====== Ambil posisi GPS ======

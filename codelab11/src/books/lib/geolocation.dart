@@ -9,24 +9,12 @@ class LocationScreen extends StatefulWidget {
 }
 
 class _LocationScreenState extends State<LocationScreen> {
-  String myPosition = '';
+  late Future<Position> myPosition;
 
   @override
   void initState() {
     super.initState();
-    getPosition().then((Position myPos) {
-      // Simpan hasil posisi
-      String positionText =
-          'Latitude: ${myPos.latitude.toString()} - Longitude: ${myPos.longitude.toString()}';
-      setState(() {
-        myPosition = positionText;
-      });
-    }).catchError((error) {
-      // Tangani error (misalnya izin ditolak)
-      setState(() {
-        myPosition = 'Error: $error';
-      });
-    });
+    myPosition = getPosition();
   }
 
   @override
@@ -37,10 +25,32 @@ class _LocationScreenState extends State<LocationScreen> {
         title: const Text('Current Location - by Salsabila'),
       ),
       body: Center(
-        child: Text(
-          myPosition.isEmpty ? 'Getting location...' : myPosition,
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 18),
+        child: FutureBuilder<Position>(
+          future: myPosition,
+          builder: (context, snapshot) {
+            // Cek status koneksi
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Text('Getting location...');
+            } 
+            // 🧠 Tambahan untuk handling error
+            else if (snapshot.connectionState == ConnectionState.done) {
+              if (snapshot.hasError) {
+                return const Text(
+                  'Something terrible happened!',
+                  style: TextStyle(color: Colors.red, fontSize: 18),
+                  textAlign: TextAlign.center,
+                );
+              }
+              // Jika berhasil dapat lokasi
+              return Text(
+                'Latitude: ${snapshot.data?.latitude}\nLongitude: ${snapshot.data?.longitude}',
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 18),
+              );
+            }
+            // Default jika tidak ada kondisi lain
+            return const Text('Unknown state');
+          },
         ),
       ),
     );
