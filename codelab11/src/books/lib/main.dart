@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:async/async.dart'; // ✅ Langkah 1: import async
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
@@ -34,27 +33,7 @@ class FuturePage extends StatefulWidget {
 class _FuturePageState extends State<FuturePage> {
   String result = '';
 
-  // ====== Langkah 2: Tambahkan variabel late dan method untuk Completer ======
-  late Completer<int> completer;
-
-  Future<int> getNumber() {
-    completer = Completer<int>();
-    calculate();
-    return completer.future;
-  }
-
-  // ====== Langkah 5: Ganti isi method calculate() ======
-  Future<void> calculate() async {
-    try {
-      await Future.delayed(const Duration(seconds: 5)); // simulasi proses lama
-      completer.complete(42); // hasil sukses
-      // throw Exception(); // gunakan ini untuk mengetes error
-    } catch (_) {
-      completer.completeError({}); // jika error
-    }
-  }
-
-  // ====== Tambahkan tiga method Future (kode lama tetap ada, tapi tidak dipakai dulu) ======
+  // ====== Future async sederhana ======
   Future<int> returnOneAsync() async {
     await Future.delayed(const Duration(seconds: 3));
     return 1;
@@ -70,13 +49,23 @@ class _FuturePageState extends State<FuturePage> {
     return 3;
   }
 
-  Future<void> count() async {
-    int total = 0;
-    total = await returnOneAsync();
-    total += await returnTwoAsync();
-    total += await returnThreeAsync();
-    setState(() {
-      result = total.toString();
+  // ====== Langkah 4: Ganti FutureGroup dengan Future.wait ======
+  void returnFG() async {
+    final futures = Future.wait<int>([
+      returnOneAsync(),
+      returnTwoAsync(),
+      returnThreeAsync(),
+    ]);
+
+    futures.then((List<int> value) {
+      int total = 0;
+      for (var element in value) {
+        total += element;
+      }
+
+      setState(() {
+        result = total.toString();
+      });
     });
   }
 
@@ -92,21 +81,16 @@ class _FuturePageState extends State<FuturePage> {
             const Spacer(),
             ElevatedButton(
               child: const Text('GO!'),
-              // ====== Langkah 6: Pindah ke onPressed() ======
+              // ====== Langkah 2: Edit onPressed() ======
               onPressed: () {
-                getNumber().then((value) {
-                  setState(() {
-                    result = value.toString();
-                  });
-                }).catchError((e) {
-                  setState(() {
-                    result = 'An error occurred';
-                  });
-                });
+                returnFG(); // panggil method Future.wait
               },
             ),
             const Spacer(),
-            Text(result, style: const TextStyle(fontSize: 24)),
+            Text(
+              result,
+              style: const TextStyle(fontSize: 24),
+            ),
             const Spacer(),
             const CircularProgressIndicator(),
             const Spacer(),
