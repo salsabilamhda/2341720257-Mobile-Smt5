@@ -1,3 +1,7 @@
+### Nama : Salsabila Mahda Runisha
+### NIM : 2341720257
+### Kelas : TI - 3F
+
 ## Soal 1
 Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda.
 
@@ -162,7 +166,23 @@ Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerja
 
 ## Soal 17
 
+- Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
 
+  Jawab :
+  Saat tombol "Change Color" diklik, metode _showColorDialog dipanggil, yang kemudian menampilkan AlertDialog menggunakan await showDialog. Eksekusi metode ini akan dijeda oleh await hingga dialog ditutup. Ketika Anda mengklik salah satu tombol warna (Pink, Kuning, atau Tosca), onPressed pada tombol tersebut akan memperbarui variabel color dan kemudian memanggil Navigator.pop(context) untuk menutup dialog. Setelah dialog tertutup, await selesai dan kode melanjutkan eksekusi ke setState(() {}), yang memberitahu Flutter untuk membangun ulang (rebuild) UI, sehingga backgroundColor pada Scaffold berubah sesuai warna yang baru dipilih.
+
+  https://github.com/user-attachments/assets/6759d0c0-7d00-4571-b0e4-42c5276f37c3
+
+- Gantilah 3 warna pada langkah 3 dengan warna favorit Anda!
+
+  <img width="420" height="416" alt="image" src="https://github.com/user-attachments/assets/5b4d6630-5638-4e50-8cad-b8e62a973339" />
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 17".
+
+  https://github.com/user-attachments/assets/f6e0f6ab-048b-4d8e-aa8c-5d662b93bd03
+
+
+  
   
 
 
